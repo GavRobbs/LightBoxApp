@@ -1,14 +1,60 @@
 <ion-header>
   <ion-navbar>
     <ion-title>
-      Ionic Blank
+      Lightbox
     </ion-title>
   </ion-navbar>
 </ion-header>
 
 <ion-content padding>
-  The world is your oyster.
-  <p>
-    If you get lost, the <a href="http://ionicframework.com/docs/v2">docs</a> will be your guide.
-  </p>
+  <div>Mode:
+      <span *ngIf="pattern_sent == false; else otherwords">Static</span>
+  </div>
+
+  <ng-template #otherwords>Patterned</ng-template>
+
+  <h2>Lights</h2>
+  <ion-list>
+    <ion-item>
+      <ion-label>White</ion-label>
+      <ion-checkbox [(ngModel)]="white"></ion-checkbox>
+    </ion-item>
+    <ion-item>
+      <ion-label ion-text class="redtext">Red</ion-label>
+      <ion-checkbox [(ngModel)]="red"></ion-checkbox>
+    </ion-item>
+    <ion-item>
+      <ion-label ion-text class="greentext">Green</ion-label>
+      <ion-checkbox [(ngModel)]="green"></ion-checkbox>
+    </ion-item>
+    <ion-item>
+      <ion-label ion-text class="orangetext">Orange</ion-label>
+      <ion-checkbox [(ngModel)]="orange"></ion-checkbox>
+    </ion-item>
+    <ion-item>
+      <ion-label ion-text class="bluetext">Blue</ion-label>
+      <ion-checkbox [(ngModel)]="blue"></ion-checkbox>
+    </ion-item>
+    <ion-item>
+      <ion-label ion-text class="yellowtext">Yellow</ion-label>
+      <ion-checkbox [(ngModel)]="yellow"></ion-checkbox>
+    </ion-item>
+  </ion-list>
+  <h2>Blink</h2>
+    <ion-grid>
+      <ion-row>
+        <ion-col col-2>
+          <ion-label ion-text>Blink</ion-label>
+          <ion-checkbox [(ngModel)]="blink"></ion-checkbox>
+        </ion-col>
+        <ion-col col-10>
+          <ion-label>Delay(ms)</ion-label>
+          <ion-input [(ngModel)]="delay"></ion-input>
+        </ion-col>
+      </ion-row>
+    </ion-grid>
+  <h2>Actions</h2>
+  <button ion-button block (click)="Update()">Update</button>
+  <button ion-button block (click)="OpenPatternMenu()">Add A Custom Pattern</button>
+  <button ion-button block (click)="Reset()">Reset All</button>
 </ion-content>

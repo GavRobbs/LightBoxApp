@@ -1,0 +1,13 @@
+<ion-content>
+  <div text-center ion-text class="pagetitle">Program A Custom Pattern</div>
+  <ion-item>
+    <ion-label>Pattern Code</ion-label>
+    <ion-input [(ngModel)]="pcode" name="pcode"></ion-input>
+  </ion-item>
+  <ion-item>
+    <ion-label>Switching Delay</ion-label>
+    <ion-input [(ngModel)]="sdelay" name="sdelay"></ion-input>
+  </ion-item>
+  <button ion-button block (click)="Accept()">Accept</button>
+  <button ion-button block (click)="Cancel()">Cancel</button>
+</ion-content>
